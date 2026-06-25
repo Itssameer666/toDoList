@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do list</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4 mx-auto mt-5 custom">
+              <div class="row">
+                <div class="col-sm-12 bg-info heading">
+                    <h2 class="text-center mt-3 text-dark fw-bold">To Do List</h2>
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col-sm-6 text-center">
+                    <h6>Added Task</h6><br>
+                    <span id="count"class="fs-2">0</span>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <h6>Done Task</h6><br>
+                    <span id="done" class="fs-2">0</span>
+                </div>
+              </div>
+                <input type="text" placeholder="  Enter your item" class="ms-4" id="text">
+                <button class="button" onclick="add()">Add</button>
+                <hr>
+                <ul id="tasks">
+                    
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/main.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+      <script>
+    function blast() {
+      let duration = 1000;
+      let end = Date.now() + duration;
+
+      (function frame() {
+        confetti({
+          particleCount: 6,
+          angle: 60,
+          spread: 80,
+          origin: { x: 0 }
+        });
+
+        confetti({
+          particleCount: 6,
+          angle: 120,
+          spread: 80,
+          origin: { x: 1 }
+        });
+
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      })();
+    }
+  </script>
+</body>
+</html>
